@@ -14,7 +14,9 @@ pipeline {
     stages {
 		stage('whoami')
 		{
-			sh 'whoami'
+			steps {
+				sh 'whoami'
+			}
 		}
         stage('Checkout') {
             steps {
