@@ -2,14 +2,20 @@ pipeline {
 	agent {
 		docker {
 			image 'bitnami/dotnet-sdk'
+			args '-u jenkins:jenkins'
 		}
 	}
 
     environment {
         DOTNET_CLI_HOME = 'C:\\Program Files\\dotnet'
+		DOCKER_HOST = tcp://localhost:2375
     }
 
     stages {
+		stage('whoami')
+		{
+			sh 'whoami'
+		}
         stage('Checkout') {
             steps {
                 checkout scm
