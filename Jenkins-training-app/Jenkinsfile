@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker {
 			image 'bitnami/dotnet-sdk'
-			//args '-u jenkins:jenkins'
+			args '-u root'
 		}
 	}
 
