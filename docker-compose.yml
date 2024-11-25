@@ -1,12 +1,6 @@
 version: "3.8"
 
 services:
-    dotnet-sdk:
-        image: bitnami/dotnet-sdk
-        command: ["tail", "-f", "/dev/null"] # To keep the container running
-        volumes:
-        - dotnet_data:/app       
-
     jenkins:
         container_name: jenkins
         image: jenkins/jenkins:latest
