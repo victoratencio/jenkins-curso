@@ -21,6 +21,9 @@ pipeline {
         stage('Build') {
             steps {
                 script {
+					//permissions
+					sh 'chmod +x docker'
+					
                     // Restoring dependencies
                     //bat "cd ${DOTNET_CLI_HOME} && dotnet restore"
                     sh 'dotnet restore'
