@@ -2,7 +2,6 @@ pipeline {
 	agent {
 		docker {
 			image 'bitnami/dotnet-sdk'
-			args '-u jenkins:jenkins'
 		}
 	}
 
@@ -21,10 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-					//permissions
-					sh 'chmod +x docker'
-					
-                    // Restoring dependencies
+					// Restoring dependencies
                     //bat "cd ${DOTNET_CLI_HOME} && dotnet restore"
                     sh 'dotnet restore'
 
