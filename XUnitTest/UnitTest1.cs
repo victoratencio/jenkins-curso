@@ -19,7 +19,7 @@ namespace XUnitTest
 
 			var result = Rest.RestValues(5, 2);
 
-			Assert.Equal(1, result);
+			Assert.Equal(3, result);
 		}
 	}
 }
